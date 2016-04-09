@@ -1,0 +1,22 @@
+{
+   "author": "William Thomas",
+   "description": "Quickly copies end slate annotations from one YouTube video to another.",
+   "homepage_url": "http://willseph.com/",
+   "icons": {
+      "128": "img/icon128.png",
+      "16": "img/icon16.png",
+      "48": "img/icon48.png"
+   },
+   "manifest_version": 2,
+   "name": "EndSlateCopier",
+   "permissions": [ "https://www.youtube.com/" ],
+   "version": "0.0.1",
+   "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/edit?o=U&video_id=*","https://www.youtube.com/edit?video_id=*"],
+      "css": ["css/endslatecopier.css"],
+      "js": ["js/jquery.min.js", "js/endslatecopier.js"]
+    }
+  ],
+  "web_accessible_resources": ["img/ajax.gif"]
+}
