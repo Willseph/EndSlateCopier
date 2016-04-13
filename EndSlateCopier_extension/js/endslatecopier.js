@@ -33,10 +33,15 @@ var endSlateAnnotationElements = [];
 var endSlateTimeBuffer = 5;
 
 function endslatecopy_Main() {
+	var $videoIDBox = jQuery('.video-url-input-field');
+	if($videoIDBox.length < 1) 
+		return;
+		
 	jQuery('#video-info').first().append('<div style="clear:both;"></div>');
 	jQuery('#video-info').first().append(endslatecopy_BuildCopyStuff());
-	
-	currentVideoID = /youtu\.be\/(.+)$/i.exec(jQuery('.video-url-input-field').val())[1];
+		
+	$videoIDBox = $videoIDBox.first();
+	currentVideoID = /youtu\.be\/(.+)$/i.exec($videoIDBox.val())[1];
 	var durationString = jQuery('dd').filter(function(i,$e){return $e.innerHTML.match(/^\d+:\d+(:\d+)?$/);}).first().text();
 	videoLength = endslatecopy_TimeStringToSeconds(durationString);
 	
